@@ -33,7 +33,7 @@ public class App
         //Routes
         post("/addUser", userControllerBean.DBcreateNewUser );
         get("/allUsers", userControllerBean.DBgetAllUser);
-        post("/updateUser", userControllerBean.DBupdateUser);
+        put("/updateUser", userControllerBean.DBupdateUser);
         
     }
     

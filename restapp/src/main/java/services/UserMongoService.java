@@ -125,7 +125,7 @@ public class UserMongoService implements IUserService {
     }
 	
 /***************************************************************************************************
-*Create erro in json format
+*Create error in json format
 *@param error code
 *@param error message
 *@return Error String in json format
