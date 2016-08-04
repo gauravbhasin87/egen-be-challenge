@@ -28,13 +28,13 @@ User : Model Class
 UserController :
 	UserController acts as an intermediate between the user request and back-end service.
 	
-IUserService : interface for user service
+IUserService : interface for user service. This will help in testing with injecting mock user service object.
 
 UserMongoService : UserMongoService is a concrete class to interact with the backing MongoDB.It holds the reference to UserRepository for performing CRUD on 
                    user collection in MongoDB.The main purpose of this class it convert json to-and-from User POJO and pass back-and-forth to UserRepository 
 	
 IUserRepository :  Interface for User Repository
-					Different implementation of IUserReposiotry provide interaction with different databases. One such implementation is UserMongoRepository which provide CRUD operations on MongoDB 
+					Different implementation of IUserReposiotry provide interaction with different databases. One such implementation is UserMongoRepository which provide CRUD operations on MongoDB. This will help in testing with injecting mock user repository object. 
 
 UserMongoRepository : UserMongoRepository performs CRUD operation on MongoDB. It takes the User objects and save them 
 						as documents in MongoDB. It handles the responsibility of converting MOngoDB documents to POJO and vice-versa.					
@@ -47,6 +47,7 @@ Test Cases:
 2. userAlreadyExists : Sends an add request with already existing user in DB.
 
 3. userNotFoundForUpdate : Test to update non-existing user in the database. Api returns 404 saying user not present.
+
 
 
 
