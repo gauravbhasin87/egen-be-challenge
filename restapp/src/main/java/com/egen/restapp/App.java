@@ -10,6 +10,8 @@ import services.UserMongoService;
 
 import static spark.Spark.*;
 
+//import org.apache.log4j.Logger;
+
 /**
  * Application Bootstrap
  * Spark application start from here and deployed on Jetty server on port 4567.
@@ -19,6 +21,7 @@ import static spark.Spark.*;
  */
 public class App 
 {
+	//static final Logger logger = Logger.getLogger(App.class);
     public static void main( String[] args )
     {
     	//initializing dependencies

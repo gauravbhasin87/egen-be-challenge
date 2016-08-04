@@ -60,7 +60,7 @@ public class UserMongoRepository implements IUserRepository{
 			return dbuser.getString("id");
 		}
 		else{
-			return "User Already Exists";
+			return null;
 		}
 	}
 	
@@ -133,7 +133,7 @@ public class UserMongoRepository implements IUserRepository{
 		BasicDBObject addr = createAddressDocument(user.getAddress());
 		dbuser.append("address", addr);
 		
-	    DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ");
+	    DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
 	    //get current date time with Date()
 	    Date date = new Date();
 	    System.out.println(dateFormat.format(date));

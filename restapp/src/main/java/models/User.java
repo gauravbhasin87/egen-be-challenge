@@ -2,7 +2,9 @@ package models;
 
 import java.util.Date;
 import java.util.UUID;
-
+/*
+ * User model class
+ */
 public class User {
 	String id;
 	String firstName;

@@ -33,7 +33,12 @@ public class UserController {
 	public Route DBcreateNewUser = (Request request, Response response)->{
 		String id = userService.DBcreateUser(request.body());
 		response.type("application/json");
-		return id;
+		if(id != null)
+			return id;
+		else{
+			response.status(409);
+			return "User already exists with given id";
+		}
 	};
 	//Route field for fetching all users in the database using user service
 	public Route DBgetAllUser = (Request request, Response response)->{
@@ -45,6 +50,13 @@ public class UserController {
 	public Route DBupdateUser = (Request request, Response response)->{
 		String jsonUpdatedUser = userService.DBupdateUser(request.body());
 		response.type("application/json");
-		return jsonUpdatedUser;
+		if(jsonUpdatedUser != null){
+			return jsonUpdatedUser;
+		}
+		else{
+			response.status(404);
+			return "User not found";
+		}
+		
 	};
 }

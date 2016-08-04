@@ -60,7 +60,6 @@ public class UserMongoService implements IUserService {
 ****************************************************************************************************/	
 	@Override
 	public String DBgetAllUsers() {
-		// TODO Auto-generated method stub
 		List<User> list = userRepository.getAll();
 		return dataToJson(list);
 	}
@@ -75,12 +74,10 @@ public class UserMongoService implements IUserService {
 	public String DBupdateUser(String userJson) {
 		User user = (User) jsonToUserPOJO(userJson);
 		User updatedUser = userRepository.update(user);
-		if(updatedUser != null){
+		if(updatedUser != null)
 			return dataToJson(updatedUser);
-		}
-		else{
-			return createError("404","User not found and not updated");
-		}
+		else
+			return null;
 		
 	}
 
